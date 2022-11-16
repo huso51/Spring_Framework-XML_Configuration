@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+<aop:aspectj-autoproxy/>
+	<context:annotation-config/>
+	<context:component-scan base-package="com.mimaraslan.model, com.mimaraslan.services.aop"/>
+	
+	<bean id="beanPersonel" class="com.mimaraslan.model.Personel">
+		<property name="adi" value="Rahman"></property>
+		<property name="soyadi" value="Yazgan"></property>
+		<property name="tecrube" value="#{5+3}"></property>
+	</bean>
+
+	<bean id="beanAopGorevleri" class="com.mimaraslan.services.aop.AopGorevleri"/>
+
+
+
+
+
+	<aop:config>
+		<aop:aspect id="aspects" ref="beanAopGorevleri">
+		
+			<aop:pointcut id="bizimOzHakikiPointCut"  expression="execution(* com.mimaraslan.model.Personel.adiSoyadKontrolEt(..))"  />
+			
+			 <aop:before method="ilkGorev" pointcut-ref="bizimOzHakikiPointCut" />
+
+			<aop:around method="sarGorev" pointcut-ref="bizimOzHakikiPointCut" />
+		
+		</aop:aspect>
+	</aop:config>
+	
+	
+	
+</beans>
+
+
+
+
+
+
+
+
+

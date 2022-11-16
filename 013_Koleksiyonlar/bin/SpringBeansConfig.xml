@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+
+	
+	
+	
+	
+	<bean id="beanOgrenci" class="com.mimaraslan.Ogrenci">
+		
+		<property name="ogrenciList">
+			<list>
+				<value>Burak Yılmaz</value>
+				<value>Mert Bozkurt</value>
+				<value>Mutlu Sancaktutar</value>
+				<value>Sinan Karakaya</value>
+			</list>
+		</property>
+		
+		<property name="ogrenciSet">
+			<set>
+				<value>Burak Kabasakal</value>
+				<value>Burak Güvenç</value>
+			</set>
+		</property>
+		
+		<property name="ogrenciMap">
+			<map>
+				<entry key="1" value="Hasan Bayat"></entry>
+				<entry key="2" value="Ahmet Pehlivan"></entry>
+				<entry key="3" value="Uğur Özalp"></entry>
+			</map>
+		</property>
+		
+		<property name="ogrenciProperties">
+			<props>
+				<prop key="Erken">Kategori 1</prop>
+				<prop key="Bayan">Kategori 2</prop>
+			</props>
+		</property>
+		
+	</bean>
+</beans>
+
+

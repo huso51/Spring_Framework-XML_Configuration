@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+
+	<bean id="beanAdres" class="com.mimaraslan.Adres">
+		<property name="mahalle" value="Yurt"/>
+		<property name="sehir" value="Adana"/>
+		<property name="semt" value="Merkez"/>
+	</bean>
+	
+<!-- 
+	<bean id="beanCalisan" class="com.mimaraslan.Calisan">
+		<constructor-arg name="adi" value="Burak"></constructor-arg>
+		<constructor-arg name="soyadi" value="Yılmaz"></constructor-arg>
+		<constructor-arg name="yasi" value="25"></constructor-arg>
+		<constructor-arg name="adres" ref="beanAdres" ></constructor-arg>
+	</bean>
+	 -->
+	
+	<bean id="beanCalisan" class="com.mimaraslan.Calisan"
+		c:adi="Burak"
+		c:soyadi="Yılmaz"
+		c:yasi="25"
+		c:adres-ref="beanAdres" />
+<!-- 		
+	<bean id="beanCalisan" class="com.mimaraslan.Calisan"
+		c:_0="Burak"
+		c:_1="Yılmaz"
+		c:_2="25"
+		c:_3-ref="beanAdres" />
+	 -->
+	
+	
+	
+	
+</beans>
+
+

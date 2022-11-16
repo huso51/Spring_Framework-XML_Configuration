@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="sozlerBean" class="com.mimaraslan.Sozler">
+		<property name="cumle" value="Spring Çatısı Eğitimi güzeldir, hoştur ama bana ne!"/>
+	</bean>
+	
+	<bean id="baslatmaBean"
+		class="com.mimaraslan.ContextOlayBaslatmaIsleyicisi">
+	</bean>
+	
+	<bean id="durdurmaBean"
+		class="com.mimaraslan.ContextOlayDurdurmaIsleyicisi">
+	</bean>
+	
+	<bean id="kapatmaBean"
+		class="com.mimaraslan.ContextOlayKapatmaIsleyicisi">
+	</bean>
+	
+	<bean id="tazelemeBean"
+		class="com.mimaraslan.ContextOlayTazelemeIsleyicisi">
+	</bean>
+	
+</beans>
